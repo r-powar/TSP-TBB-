@@ -1,0 +1,13 @@
+Answer the following questions:
+
+1. Analyze the data from qsort.csv. What can you infer from the data?
+
+ - Looking at the data from the cvs file we can see that as the size of the file increases the time taken by the sequential sorting function increase, on the other hand the parallelization introduced in the inplace sorting function performs better. Of all the three sorting functions, the sorting function with the best span takes the longest to complete. 
+
+- If we look at the sorting function with the best span, the time improves as the cutoff value increases for the respective file sizes.   
+
+
+2. Describe how you might improve the performance of p_qsort_best_span.
+
+- In the sorting function we are using a multiple storage points, where we are introducing new arrays which leads to more reads and writes. Further leading to more operational time and thus this can be improved from a memory management point of view.
+

@@ -1,0 +1,25 @@
+#!/usr/bin/python
+import os
+import sys
+
+files = [
+  "qsort-10e4.in.txt",
+  "qsort-10e5.in.txt",
+  "qsort-10e6.in.txt",
+  "qsort-10e7.in.txt"
+]
+
+cutoffs = [1, 10, 50, 100, 500, 1000, 10000]
+cutoffs = [ str(x) for x in cutoffs ]
+
+outFile = open("qsort.csv", "w")
+outFile.write("size,cutof,seq_time,p_inplace_time,p_best_span_time\n")
+outFile.close()
+
+for inFile in files:
+  for cutoff in cutoffs:
+    cmdLine = "./qsort tests/" + inFile + " " + cutoff
+    print "Running test: ", cmdLine
+    os.system(cmdLine)
+
+sys.exit(0)
